@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   background-color: #C5E7C5;
 }
 header {
@@ -52,6 +51,16 @@ section {
 section a {
   color: #111111;
   font-weight: 600;
+}
+section fieldset {
+  border: solid 1px #009500;
+  border-radius: 20px;
+}
+input {
+  margin-bottom: 1em;
+}
+label {
+  padding: 1em;
 }
 footer {
   background-color: #009500;
