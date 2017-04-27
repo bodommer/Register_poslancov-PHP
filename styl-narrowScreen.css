@@ -43,3 +43,10 @@ section {
   margin-left: 140px;
   margin-right: 10%;
 }
+#popis {
+  max-width: 70%;
+}
+#odhlas {
+  top: 150px;
+  right: 14%;
+}

@@ -1,5 +1,6 @@
 body {
   background-color: #C5E7C5;
+  margin: 0px;
 }
 header {
   background-color: #009500;
@@ -47,22 +48,91 @@ section {
   background-color: #C5E7C5;
   font-family: sans-serif;
   font: "arial";
+  display: block;
 }
 section a {
   color: #111111;
   font-weight: 600;
 }
-section fieldset {
-  border: solid 1px #009500;
-  border-radius: 20px;
+section h4, section p, section h3 {
+  margin-left: 5px;
 }
-input {
-  margin-bottom: 1em;
+fieldset {
+  border: solid 2px #009500;
+  border-radius: 15px;
+}
+input, textarea {
+  margin: 0.7em;
+  margin-left: 0px;
 }
 label {
   padding: 1em;
+  padding-right: 0.3em;
 }
+section table {
+  width: 100%;
+  border: solid 2px #009500;
+  border-radius: 15px;
+  border-collapse: collapse;
+  text-align: center;
+}
+section td {
+  border-collapse: collapse;
+  border-left: solid 1px #009500;
+  border-right: solid 1px #009500;
+}
+section tr:nth-child(odd) {
+  background-color: #93d293;
+}
+section td, section th {
+  padding: 0.6em;
+}
+section th {
+  width: 15%;
+  background-color: #44a244;
+  border-bottom: solid 2px #009500;
+  border-collapse: collapse;
+}
+section th:last-child {
+  width: 7%;
+}
+section th:nth-child(5) {
+  width: 33%;
+}
+#popis {
+  vertical-align: baseline;
+  max-width: 80%;
+}
+.button {
+  border-radius: 5px;
+  background-color: #cccccc;
+  padding: 0.5em;
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 25px;
+}
+#odhlas {
+  position: absolute;
+  top: 205px;
+  right: 9%;
+}
+#zmaz {
+  margin-bottom: 20px;
+}
+.radio {
+  margin: 5px;
+  margin-left: 15px;
+}
+#triedenie th {
+  width: auto;
+  padding: 0.5em;
+}
+#triedenie td {
+  padding: 0.6em;
+}
+
 footer {
+  margin-top: 20px;
   background-color: #009500;
   height:48px;
   border: solid 1px #009500;

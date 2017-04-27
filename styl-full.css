@@ -34,3 +34,10 @@ section {
   margin-left: 20%;
   margin-right: 20%;
 }
+#popis {
+  max-width: 80%;
+}
+#odhlas {
+  top: 110px;
+  right: 24%;
+}
