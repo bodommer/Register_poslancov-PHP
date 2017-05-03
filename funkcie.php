@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('Europe/Bratislava');
 
-//$mysqli = new mysqli('localhost', 'jurco15', 'ohjai', 'jurco15');
-$mysqli = new mysqli('localhost', 'poslanec2', 'aaa', 'poslanci');
+//$mysqli = new mysqli('localhost', 'jurco15', 'ohjai', 'jurco15');  // spojenie na skolsky server
+$mysqli = new mysqli('localhost', 'poslanec2', 'aaa', 'poslanci');  //testovacie spojenie
 if ($mysqli->connect_errno) {
 	echo '<p class="chyba">Nepodarilo sa pripojiť!</p>';
 } else {
