@@ -6,7 +6,6 @@
   <link href="styl-mobil.css" rel="stylesheet" media="all">
   <link href="styl-narrowScreen.css" rel="stylesheet" media="screen and (min-width: 641px)">
   <link href="styl-full.css" rel="stylesheet" media="screen and (min-width: 1201px)">
-
 </head>
 
 <body>

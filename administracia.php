@@ -63,7 +63,6 @@ include('hlavicka.php');
     <form method="post">
       <fieldset>
         <legend>Nový záznam</legend>
-        <!--<label for="nazov">Názov/typ udalosti:</label> <input type="text" name="nazov" id="nazov" size="25" maxlength="70" <?php //if (isset($_POST['nazov'])) {echo "value=" . $_POST['nazov'];} else { echo 'placeholder=" max. 70 znakov"';} ?> required><br>-->
         <label for="datum">Dátum:</label> <input type="date" name="datum" id="datum"  <?php if (isset($_POST['datum'])) {echo "value=" . $_POST['datum'];} else { echo 'placeholder="dd.mm.yyyy"';}?> required><br>
         <label for="prichod">Čas príchodu:</label> <input type="time" name="prichod" <?php if (isset($_POST['prichod'])) {echo "value=" . $_POST['prichod'];} else { echo 'placeholder="hh:mm"';} ?>><br>
         <label for="odchod">Čas odchodu:</label> <input type="time" name="odchod" <?php if (isset($_POST['odchod'])) {echo "value=" . $_POST['odchod'];} else { echo 'placeholder="hh:mm"';} ?>><br>

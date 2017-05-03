@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Europe/Bratislava');
 
-$mysqli = new mysqli('localhost', 'poslanec', 'posl', 'poslanci');
+//$mysqli = new mysqli('localhost', 'jurco15', 'ohjai', 'jurco15');
+$mysqli = new mysqli('localhost', 'poslanec2', 'aaa', 'poslanci');
 if ($mysqli->connect_errno) {
 	echo '<p class="chyba">Nepodarilo sa pripojiť!</p>';
-//	echo '<p class="chyba">NEpodarilo sa pripojiť! (' . $mysqli->connect_errno . ' - ' . $mysqli->connect_error . ')</p>';
 } else {
 	$mysqli->query("SET CHARACTER SET 'utf8'");
 }
@@ -14,15 +14,15 @@ function spravne_prihlasenie($meno, $heslo) {
   $h = addslashes(htmlspecialchars(strip_tags($heslo)));
   global $mysqli;
   if (!$mysqli->connect_errno) {
-    $sql="SELECT id FROM osoby WHERE meno='" . $m . "' AND heslo='" . $h . "'";
-    if ($result = $mysqli->query($sql)) {  // vykonaj dopyt
+    $sql="SELECT id FROM osoby WHERE meno='" . $m . "' AND heslo=MD5('$h')";
+		if ($result = $mysqli->query($sql)) {
       while ($row = $result->fetch_assoc()) {
         return $row['id'];
       }
     } else {
       return False;
     }
-}
+	}
 }
 
 function validateDate($date, $format = 'Y-m-d H:i:s')  {
@@ -70,7 +70,7 @@ function je_uz_v_db($id, $datum, $prichod, $odchod) {
       } elseif ($mysqli->errno) {
         echo '<p>Chyba spojenia so serverom!</p>';
         return True;
-}
+		}
 }
 
 function vloz_casy($id, $datum, $prichod, $odchod, $popis) {
@@ -80,6 +80,7 @@ function vloz_casy($id, $datum, $prichod, $odchod, $popis) {
     $prichod = $mysqli->real_escape_string($prichod);
     $odchod = $mysqli->real_escape_string($odchod);
     $popis = $mysqli->real_escape_string($popis);
+
     if (je_uz_v_db($id, $datum, $prichod, $odchod)) {
       return False;
     } else {
@@ -113,31 +114,28 @@ function vypis_zaznamy($id, $prihlaseny, $meno='') {
           echo "</tr>\n";
         } echo '</table>';
           if ($prihlaseny) echo '<input type="submit" name="zmaz" class="button" id="zmaz" value="Zmazať zvolené záznamy">';
-          //else {echo '<form action="index.php"><input type="submit" class="button" value="Späť"></form>';}
           echo '</form>';
       } elseif ($mysqli->errno) {
           return False;
-}
-}
+			}
+	}
 }
 
 function vymaz_zaznamy($pole) {
   global $mysqli;
-  //print_r($pole);
   foreach ($pole as $id) {
-    //echo $id;
+
     if (!$mysqli->connect_errno) {
       $sql="DELETE FROM casy WHERE id=" . $id;
       if ($result = $mysqli->query($sql)) {} else {
         echo "<p class='chyba'>Nastala chyba pri rušení zaznamu $id.</p>\n";
         return False ;
       }
-    }	// koniec funkcie
+    }
   } return True;
 }
 
 function vypis_triedenie($poziadavka) {
-  //echo 'triedenie' . $poziadavka  ;
   global $mysqli;
   if (!$mysqli->connect_errno) {
       $sql='SELECT id, meno, adresa, strana, zamestnanie, vek, pocet_absencii, pocet_zvoleni FROM osoby ' . $poziadavka;

@@ -32,7 +32,6 @@ $ine = False;
         <input type="submit" name="tr" id="absencie" class="button" value="počtu absencií">
         <input type="submit" name="tr" id="p_zvoleni" class="button" value="počtu zvolení">
         <input type="submit" name="tr" id="str" class="button" value="strán"><br>
-
       </fieldset>
     </form>
     <?php
@@ -67,7 +66,7 @@ $ine = False;
             }
           }
         }
-        vypis_triedenie($poziadavka);
+      vypis_triedenie($poziadavka);
   }
 ?>
 </section>

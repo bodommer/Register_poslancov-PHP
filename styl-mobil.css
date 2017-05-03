@@ -77,7 +77,6 @@ section table {
   text-align: center;
 }
 section td {
-  border-collapse: collapse;
   border-left: solid 1px #009500;
   border-right: solid 1px #009500;
 }
@@ -91,7 +90,6 @@ section th {
   width: 15%;
   background-color: #44a244;
   border-bottom: solid 2px #009500;
-  border-collapse: collapse;
 }
 section th:last-child {
   width: 7%;
@@ -130,7 +128,6 @@ section th:nth-child(5) {
 #triedenie td {
   padding: 0.6em;
 }
-
 footer {
   margin-top: 20px;
   background-color: #009500;
