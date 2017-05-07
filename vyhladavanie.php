@@ -39,7 +39,7 @@ $ine = False;
       if (isset($_GET['p_strany'])) {
         if (isset($_GET['strana_smer']) && isset($_GET['strana'])) {
           $poziadavka .= ' AND strana="';
-          $poziadavka .= $_GET['strana'];
+          $poziadavka .= kontrola_strana($_GET['strana']);
           if ($_GET['strana_smer'] == 'vzostupne') {
             $poziadavka .= '" ORDER BY meno ASC';
           } else {

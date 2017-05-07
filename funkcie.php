@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('Europe/Bratislava');
 
-//$mysqli = new mysqli('localhost', 'jurco15', 'ohjai', 'jurco15');  // spojenie na skolsky server
-$mysqli = new mysqli('localhost', 'poslanec2', 'aaa', 'poslanci');  //testovacie spojenie
+$mysqli = new mysqli('localhost', 'jurco15', 'ohjai', 'jurco15');  // spojenie na skolsky server
+//$mysqli = new mysqli('localhost', 'poslanec2', 'aaa', 'poslanci');  //testovacie spojenie
 if ($mysqli->connect_errno) {
 	echo '<p class="chyba">Nepodarilo sa pripojiť!</p>';
 } else {
@@ -133,6 +133,11 @@ function vymaz_zaznamy($pole) {
       }
     }
   } return True;
+}
+
+function kontrola_strana($str) {
+	global $mysqli;
+	return $mysqli->real_escape_string($str);
 }
 
 function vypis_triedenie($poziadavka) {

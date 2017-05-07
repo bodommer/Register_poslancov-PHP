@@ -85,7 +85,7 @@ include('hlavicka.php');
   <form method="post">
     <fieldset>
       <legend>Prihlasovacie údaje</legend>
-      <label for="meno">Meno:</label> <input type="text" name="meno" id="meno" size="15" maxlength="12" placeholder=" 3-12zn." required><br>
+      <label for="meno">Meno:</label> <input type="text" name="meno" id="meno" size="15" maxlength="25" placeholder=" vaše meno" required><br>
     	<label for="heslo">Heslo:</label> <input type="password" name="heslo" id="heslo" size="16" placeholder=" 8-16zn., 1číslo" required>
     </fieldset>
     <input type="submit" name="prihlas" id="prihlas" class="button" value="Prihlásiť">
